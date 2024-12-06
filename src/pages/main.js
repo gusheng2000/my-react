@@ -1,30 +1,26 @@
 import {React,useState} from "react";
 import './main.css';
 
-import { Breadcrumb, Layout, theme } from 'antd';
+import { Breadcrumb, Layout } from 'antd';
 import CommonAside from "../components/CommonAside";
 import Commonheader from "../components/Commonheader";
+import { useSelector } from "react-redux";
 const { Content, Footer } = Layout;
-
-
 
 
 const Main=()=>{
 
-    const [collapsed, setCollapsed] = useState(false);
-    const {
-      token: { colorBgContainer, borderRadiusLG },
-    } = theme.useToken();
+const isCollapse= useSelector(state=>state.tab.isCollapse)
 
-    return (
+ return (
         <Layout
           style={{
             minHeight: '100vh',
           }}
         >
-        <CommonAside/>
+        <CommonAside isCollapse={isCollapse}/>
           <Layout>
-            <Commonheader/>
+            <Commonheader isCollapse={isCollapse}/>
             <Content
               style={{
                 margin: '0 16px',
@@ -42,8 +38,8 @@ const Main=()=>{
                 style={{
                   padding: 24,
                   minHeight: 360,
-                  background: colorBgContainer,
-                  borderRadius: borderRadiusLG,
+                  // background: colorBgContainer,
+                  // borderRadius: borderRadiusLG,
                 }}
               >
                 Bill is a cat.

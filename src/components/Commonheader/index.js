@@ -3,7 +3,10 @@ import { Button,Avatar,Dropdown} from "antd";
 import { Header } from "antd/es/layout/layout";
 import {MenuFoldOutlined} from '@ant-design/icons'
 import './index.css'
-const Commonheader=()=>{
+import { useDispatch } from "react-redux";
+import {collapseMenu} from "../../store//reducers/tab"
+const Commonheader=({isCollapse})=>{
+  const dispatch = useDispatch()
 
     const items = [
         {
@@ -24,13 +27,19 @@ const Commonheader=()=>{
           disabled: false,
         },
       ];
+    //定义点开收起状态
+   const changeCollopse=()=>{
+     dispatch(collapseMenu())
+    }
     return (
         <Header className="header-container">
-            <Button icon={<MenuFoldOutlined/>}>
+            <Button
+            onClick={changeCollopse}
+            icon={<MenuFoldOutlined/>}>
             </Button>
 
             <Dropdown  menu={{items}}>
-            <Avatar src={<img alt='头像' size={64}  src={require("../../assets/avatar.jpg")}></img>}></Avatar>
+            <Avatar src={<img alt='头像'  sx={{ width: 56, height: 56 }}  src={require("../../assets/avatar.jpg")}></img>}></Avatar>
             </Dropdown>
         </Header>
     )

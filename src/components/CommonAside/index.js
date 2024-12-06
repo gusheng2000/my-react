@@ -2,7 +2,8 @@ import React from "react";
 import { Layout, Menu } from 'antd';
 import menuconfig from '../../config';
 import * as Icon from '@ant-design/icons';
-
+import { useDispatch } from "react-redux";
+import { collapseMenu } from "../../store/reducers/tab";
 
 
 const iconToElement = (name) => React.createElement(Icon[name])
@@ -28,10 +29,11 @@ const items = menuconfig.map(item => {
 })
 
 
-const CommonAside = () => {
+const CommonAside = ({isCollapse}) => {
+  const dispatch=useDispatch()
   return (
-    <Sider collapsible collapsed={false}>
-      <h3 className="app-name" >通用后台管理 </h3>
+    <Sider collapsible collapsed={isCollapse}  onCollapse={() => dispatch(collapseMenu())}>
+      <h3 className="app-name" >{isCollapse?"后台":"通用后台管理"} </h3>
       <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline" items={items} />
     </Sider>
   )

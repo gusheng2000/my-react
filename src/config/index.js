@@ -5,7 +5,7 @@ export default [
       
         path:'/mall',
         name:'mall',
-        label: '商品管理',      
+        label: '首页',      
         icon:'MailOutlined',
         url:'/mall/index'
      },
@@ -13,7 +13,7 @@ export default [
       
         path:'/user',
         name:'user',
-        label:'用户管理',
+        label:'商品管理',
         icon:'MailOutlined',
         url:'/mall/index'
      }

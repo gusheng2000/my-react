@@ -5,6 +5,7 @@ import { Breadcrumb, Layout } from 'antd';
 import CommonAside from "../components/CommonAside";
 import Commonheader from "../components/Commonheader";
 import { useSelector } from "react-redux";
+import { Outlet } from "react-router-dom";
 const { Content, Footer } = Layout;
 
 
@@ -34,16 +35,7 @@ const isCollapse= useSelector(state=>state.tab.isCollapse)
                 <Breadcrumb.Item>User</Breadcrumb.Item>
                 <Breadcrumb.Item>Bill</Breadcrumb.Item>
               </Breadcrumb>
-              <div
-                style={{
-                  padding: 24,
-                  minHeight: 360,
-                  // background: colorBgContainer,
-                  // borderRadius: borderRadiusLG,
-                }}
-              >
-                Bill is a cat.
-              </div>
+                <Outlet/>
             </Content>
             <Footer
               style={{

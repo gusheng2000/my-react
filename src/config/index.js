@@ -3,11 +3,11 @@ export default [
  
     {   
       
-        path:'/mall',
-        name:'mall',
+        path:'/home',
+        name:'home',
         label: '首页',      
         icon:'MailOutlined',
-        url:'/mall/index'
+        url:'/home'
      },
      {
       

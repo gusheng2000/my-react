@@ -21,13 +21,12 @@ const Home = () => {
 
   useEffect(() => {
     getData().then((res) => {
-      console.log(res);
-
-      const tableData  = res.data
+    console.log(res);
+    
+      const {tableData}  = res.data
       setTableData(tableData)
     })
   }, [])
-  console.log(tableData);
 
   //定义表格数据
   return (
@@ -47,7 +46,7 @@ const Home = () => {
           </div>
         </Card>
         <Card>
-          <Table columns={columns} dataSource={tableData}></Table>
+          <Table rowKey={'name'} columns={columns} dataSource={tableData} pagination={false}></Table>
         </Card>
       </Col>
       <Col span={12}></Col>

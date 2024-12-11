@@ -1,27 +1,68 @@
 /* language: css */
 .home img {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  margin-right: 20px;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin-right: 20px;
 }
 .home .user {
-  display: flex;
-  align-items: center;
-  padding-bottom: 20px;
-  margin-bottom: 20px;
-  border-bottom: 1px solid #ccc;
+    display: flex;
+    align-items: center;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ccc;
 
-  .name {
-    font-size: 32px;
-    mask-border: 10px;
-  }
+    .name {
+        font-size: 32px;
+        mask-border: 10px;
+    }
 }
 
-
 .home .user-info p {
-  line-height: 15px;
-  span {
-    margin-left: 80px;
-  }
+    line-height: 15px;
+    span {
+        margin-left: 80px;
+    }
+}
+
+.home .num {
+    margin-left: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    .ant-card {
+      width: 33%;
+        .ant-card-body {
+            display: flex;
+            padding: 10px 25px;
+            align-items: center;
+            .icon-box {
+              .anticon{
+                font-size: 30px;
+              }
+                width: 80px;
+                height: 80px;
+                /* line-height 是控制文本的行高，它决定了文本行之间的垂直间距。当你设置了 line-height，它也会影响单行文本的垂直居中。 */
+                /* 如果 div 的 height 与 line-height 相同，且该 div 中的内容是行内元素（如 span），那么文本会在 div 内垂直居中。 */
+                line-height: 90px;
+                text-align: center;
+                border-top-left-radius: 10px;
+                border-bottom-left-radius: 10px;
+            }
+            .detail{
+              margin-left: 10px;
+              .num{
+                font-size: 30px;
+                margin-bottom: 10px;
+                margin-top: 0px;
+              }
+              .name{
+                font-size: 15px;
+                text-align: center;
+                color: #999999;
+                margin: 0px;
+              }
+            }
+        }
+    }
 }

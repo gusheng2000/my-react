@@ -5,7 +5,7 @@ import * as Icon from '@ant-design/icons';
 import { useDispatch } from "react-redux";
 import { collapseMenu } from "../../store/reducers/tab";
 
-
+//生成icon
 const iconToElement = (name) => React.createElement(Icon[name])
 
 const { Sider } = Layout;
